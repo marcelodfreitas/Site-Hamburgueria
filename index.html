@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&family=Ubuntu:wght@300;400&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./styles/output.css" />
+
+    <title>Tasty Burguer</title>
+  </head>
+  <body>
+    <header class="w-full h-[350px] md:h-[420px] bg-zinc-900 bg-home bg-cover bg-center">
+      <div class="w-full h-full flex flex-col justify-center items-center">
+        <img
+          src="./assets/logo.jpg"
+          alt="logo DevBurguer"
+          class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200"
+        />
+        <h1 class="text-4xl mt-4 mb-2 font-bold text-white">Tasty Burguer</h1>
+
+        <span class="text-white font-medium">Rua das Palmeiras, 1289 - Centro - Porto Alegre/RS</span>
+
+        <div class="bg-green-700 px-4 py-1 rounded-lg mt-5" id="date-span">
+          <span class="text-white">Seg à Dom - 18h00 às 23h30</span>
+        </div>
+      </div>
+    </header>
+
+    <h2 class="text-2xl md:text-3xl font-bold text-center !mt-9 mb-6">
+      Conheça nosso menu
+    </h2>
+
+    <!-- INICIO MENU -->
+    <div id="menu">
+      <main
+        class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+      >
+        <!-- PRODUTO ITEM -->
+        <div class="flex gap-2">
+          <img
+            src="./assets/hamb-1.png"
+            alt="hamburguer1"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div>
+            <p class="font-bold">Burguer Cheddar</p>
+            <p class="text-sm">
+              Triplo cheddar, bacon, anéis de cebola, cebola caramelizada, carne
+              de costela 180g, maionese verde e pão brioche. Acompanha fritas
+            </p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$42,00</p>
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                data-name="Burguer Cheddar"
+                data-price="42,00"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM -->
+        <div class="flex gap-2">
+          <img
+            src="./assets/hamb-2.png"
+            alt="hamburguer1"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div>
+            <p class="font-bold">Smash Cheddar</p>
+            <p class="text-sm">
+              Pão brioche, maionese de alho, duplo smash 70g cada, duplo
+              cheddar, bacon. Acompanha fritas
+            </p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$36,00</p>
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                data-name="Smash Cheddar"
+                data-price="36,00"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM -->
+        <div class="flex gap-2">
+          <img
+            src="./assets/hamb-3.png"
+            alt="hamburguer1"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div>
+            <p class="font-bold">Burguer Salad</p>
+            <p class="text-sm">
+              Pão crocante, Carne de costela 180g, maionese verde, duplo
+              cheddar, alface americana, tomate e cebola roxa. Acompanha fritas
+            </p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$38,00</p>
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                data-name="Burguer Salad"
+                data-price="38,00"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM -->
+        <div class="flex gap-2">
+          <img
+            src="./assets/hamb-4.png"
+            alt="hamburguer1"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div>
+            <p class="font-bold">Burguer BIG</p>
+            <p class="text-sm">
+              Duas carnes de costela 180g cada, 4x fatias de cheddar, bacon,
+              anéis de cebola, maionese verde e pão brioche. Acompanha fritas
+            </p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$48,00</p>
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                data-name="Burguer BIG"
+                data-price="48,00"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM -->
+        <div class="flex gap-2">
+          <img
+            src="./assets/hamb-5.png"
+            alt="hamburguer1"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div>
+            <p class="font-bold">Burguer Pepper</p>
+            <p class="text-sm">
+              Queijo derretido na chapa, geleia de pimenta, bacon, maionese
+              verde, carne de costela 180g e pão brioche. Acompanha fritas.
+            </p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$40,00</p>
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                data-name="Burguer Pepper"
+                data-price="40,00"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM -->
+        <div class="flex gap-2">
+          <img
+            src="./assets/hamb-6.png"
+            alt="hamburguer1"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div>
+            <p class="font-bold">Burguer Gorgon</p>
+            <p class="text-sm">
+              Molho de gorgonzola, maionese verde, bacon, rúcula, cebola
+              caramelizada, cebola roxa, carne de costela 180g e pão brioche.
+              Acompanha fritas
+            </p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$42,00</p>
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                data-name="Burguer Gorgon"
+                data-price="42,00"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM -->
+        <div class="flex gap-2">
+          <img
+            src="./assets/hamb-7.png"
+            alt="hamburguer1"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div>
+            <p class="font-bold">Burguer Magnific</p>
+            <p class="text-sm">
+              Queijo empanado, ketchup Heinz, bacon, carne de costela 180g,
+              maionese de alho e pão brioche. Acompanha fritas.
+            </p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$56,00</p>
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                data-name="Burguer Magnific"
+                data-price="56,00"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+      </main>
+
+      <div class="mx-auto max-w-7xl px-2 my-2">
+        <h2 class="font-bold text-3xl text-center">Bebidas</h2>
+      </div>
+
+      <!-- GRID BEBIDAS -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+        id="menu"
+      >
+        <!-- PRODUTO ITEM -->
+        <div class="flex gap-2 w-full">
+          <img
+            src="./assets/refri-1.png"
+            alt="coca lata"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div class="w-full">
+            <p class="font-bold">Coca Cola Lata</p>
+            <p class="text-sm"></p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$6,00</p>
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                data-name="Coca Cola Lata"
+                data-price="6.00"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM -->
+        <div class="flex gap-2 w-full">
+          <img
+            src="./assets/refri-2.png"
+            alt="coca lata"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div class="w-full">
+            <p class="font-bold">Guaraná Lata</p>
+            <p class="text-sm"></p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$6,00</p>
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                data-name="Guaraná Lata"
+                data-price="6.00"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+      </div>
+      <!-- FIM GRID BEBIDAS -->
+    </div>
+    <!-- FIM MENU -->
+
+    <div id="cart-modal"
+      class="bg-black/60 w-full h-full fixed top-0 left-0 z-9[99] items-center justify-center hidden"
+    >
+      <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
+        <h2 class="text-center font-bold text-2xl mb-2">Meu carrinho</h2>
+
+        <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
+
+        <p class="font-bold">Total: <span id="cart-total">R$0,00</span></p>
+        <p class="font-bold mt-3">Endereço de Entrega:</p>
+        <input
+          class="w-full border-2 p-1 rounded my-2"
+          type="text"
+          placeholder="Digite seu endereço completo..."
+          id="address"
+        />
+        <p class="text-red-500 hidden" id="address-warning">
+          Digite seu endereço completo!
+        </p>
+
+        <div class="flex items-center justify-between mt-5 w-full">
+          <button
+            id="close-modal-btn"
+            class="rounded-md bg-red-800 text-white px-4 py-1 text-bold"
+          >
+            Fechar
+          </button>
+          <button
+            id="checkout-btn"
+            class="rounded-md bg-green-500 text-white px-4 py-1 text-bold"
+          >
+            Finalizar Pedido
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer
+      class="w-full bg-red-500 py-3 fixed bottom-0 flex items-center justify-center z-40"
+    >
+      <button
+        id="cart-btn"
+        class="flex items-center gap-2 text-white font-bold"
+      >
+        (<span id="cart-count">0</span>) Veja meu carrinho
+        <i class="fa fa-cart-plus text-lg text-white"></i>
+      </button>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./scripts.js"></script>
+  </body>
+</html>
