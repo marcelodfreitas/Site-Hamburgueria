@@ -884,20 +884,12 @@ video {
   height: 8rem;
 }
 
-.h-\[420px\] {
-  height: 420px;
+.h-\[350px\] {
+  height: 350px;
 }
 
 .h-full {
   height: 100%;
-}
-
-.h-\[300px\] {
-  height: 300px;
-}
-
-.h-\[350px\] {
-  height: 350px;
 }
 
 .w-28 {

@@ -68,16 +68,16 @@ function updateCartModal() {
         const cartItemElement = document.createElement('div');
         cartItemElement.classList.add("flex", "justify-between", "mb-4", "flex-col");
 
-        cartItemElement.innerHTML = `
-            <div class="flex items-center justify-between">
+        cartItemElement.innerHTML = 
+            `<div class="flex items-center justify-between">
                 <div>
                     <p class="font-medium">${item.name}</p>
                     <p>Qtd:${item.quantity}</p>
                     <p class="font-medium mt-2">R$${item.price}.00</p>
                 </div>
                 <button class="font-bold remove-btn" data-name="${item.name}">Remover</button>
-            </div>
-        `;
+            </div>`
+        ;
 
         total += item.price * item.quantity;
         cartItemsContainer.appendChild(cartItemElement);
@@ -109,11 +109,11 @@ function removerItemCarrinho(nome) {
         if (item.quantity > 1) {
             item.quantity -= 1;
         } else {
-            // Se a quantidade for 1, remove o item completamente do carrinho
+            
             cart.splice(index, 1);
         }
 
-        updateCartModal();  // Atualiza o modal após a remoção
+        updateCartModal();  
     }
 }
 
@@ -136,50 +136,46 @@ checkoutBtn.addEventListener("click", function() {
             text: "Ops... Restaurante fechado no momento!",
             duration: 3000,
             close: true,
-            gravity: "top", // `top` or `bottom`
-            position: "center", // `left`, `center` or `right`
-            stopOnFocus: true, // Prevents dismissing of toast on hover
+            gravity: "top", 
+            position: "center", 
+            stopOnFocus: true, 
             style: {
               background: "#ef4444",
             },
-            onClick: function(){} // Callback after click
+            onClick: function(){} 
           }).showToast();
-        return
+        return;
 
     }
 
-    if(cart.length === 0) return;
+    if (cart.length === 0) return;
 
-    if(addressInput.value === "") {
-        // addressWarning.classList.remove("hidden")
-        addressInput.classList.add("border-red-500")
+    if (addressInput.value.trim() === "") {
+        addressInput.classList.add("border-red-500");
+        addressWarning.classList.remove("hidden"); // Mostra o alerta visual
+        return; // Impede o envio do pedido sem endereço
     }
-
 
     //Enviar o pedido para api Whats
     const cartItems = cart.map((item) => {
-        return (
-            `${item.name} - Quantidade: (${item.quantity}) - Preço: R$${item.price} | `
-        )
-    }).join("")
+        return `*${item.name}*\nQuantidade: ${item.quantity}\nPreço: R$${(item.price * item.quantity).toFixed(2)}\n`;
+    }).join("\n");
 
-    const message = encodeURIComponent(cartItems)
-    const phone = "+5551983117180"
+    const message = encodeURIComponent(cartItems);
+    const phone = "+5551983117180";
 
-    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
+    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank");
 
-    cart.length = 0
+    cart.length = 0;
     updateCartModal();
+});
 
 
-})
-
-
-//Verificar a hora atual e manipular o horario do restaurante
+// Verificar a hora atual e manipular o horario do restaurante
 function checkOpen() {
     const data = new Date()
     const hora = data.getHours()
-    return hora >= 18 && hora < 22; // true
+    return hora >= 10 && hora < 23; // true
 
 }
 
@@ -193,4 +189,5 @@ if(isOpen) {
 } else {
     spanItem.classList.remove("bg-green-600")
     spanItem.classList.add("bg-red-500")
+    
 }
