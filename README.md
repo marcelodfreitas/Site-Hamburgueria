@@ -18,6 +18,7 @@ Bem-vindo ao repositório do **Tasty Burguer**, um site desenvolvido para uma ha
 ✅ Cálculo automático do total do pedido
 ✅ Validação do horário de funcionamento
 ✅ Envio do pedido via WhatsApp
+✅ Responsividade
 
 ## 📂 Estrutura do Projeto
 
